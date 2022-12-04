@@ -1,6 +1,6 @@
 //utilisateur type
 let admins = [{ id: 1, nom: "Revient", prenom: "Deloin", age: 25 }];
-let valButton = document.getElementById("Ajouter");
+let valButton = document.getElementById("valider");
 
 
 valButton.addEventListener("click", addAdmin);
@@ -62,7 +62,7 @@ function affichAllAdmins() {
       value.setAttribute("value", key);
       newLi.appendChild(value);
     }
-
+    
   });
 
   deleteAdmin();
