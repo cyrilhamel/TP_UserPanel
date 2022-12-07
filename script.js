@@ -1,13 +1,22 @@
 //utilisateur type
 let admins = [{ id: 1, nom: "Revient", prenom: "Deloin", age: 25 }];
 let valButton = document.getElementById("valider");
-
+let suppAllButton = document.getElementById("suppAll");
 
 valButton.addEventListener("click", addAdmin);
+suppAllButton.addEventListener("click", deleteAllAdmin);
 affichAllAdmins();
-deleteAdmin();
 
-//bouton supprimer
+
+//bouton supprimer tous les admins
+function deleteAllAdmin(){
+  while(document.getElementById("liste").appendChild(id)>0){
+  element.remove();
+  }
+}
+
+
+//bouton supprimer un admin
 function deleteAdmin() {
   let boutonSupp = document.querySelectorAll(".Supprimer");
   boutonSupp.forEach((button) => {
@@ -31,9 +40,9 @@ function addAdmin(event) {
     affichAllAdmins();
   }
 }
-
+//fonction ajouter les admins à la page HTML
 function affichAllAdmins() {
-  document.getElementById("utilisateurs").innerHTML = "";
+  document.getElementById("liste").innerHTML = "";
   admins.forEach((admin) => {
     let newInputs = {
       Nom: document.createElement("input"),
@@ -53,7 +62,7 @@ function affichAllAdmins() {
       key === "Age" && value.setAttribute("value", admin.age);
 
       newLi.appendChild(value);
-      document.getElementById("utilisateurs").appendChild(newLi);
+      document.getElementById("liste").appendChild(newLi);
     }
     for (let [key, value] of Object.entries(newButton)) {
       value.setAttribute("type", "button");
@@ -78,4 +87,26 @@ function suppAdmin(id) {
 }
 
 
+/*let valButton = document.getElementById("valider");
+valButton.addEventListener("click", affichAdmin);
 
+function addAdmin(){
+  let nom=document.getElementById("nom").value;
+  let prenom=document.getElementById("prenom").value;
+  let age=document.getElementById("age").value;
+  let tab=[nom,prenom,age];
+  console.log(tab);
+}
+
+function affichAdmin(event){
+  event.preventDefault();
+  let liste=document.getElementById("liste");
+  let newLi = document.createElement("li");
+  let infos= addAdmin();
+  let newButton = {
+    Supprimer: document.createElement("input")
+  }
+  liste.appendChild(newLi);
+  newLi.textContent=(infos+newButton);
+   
+}*/
