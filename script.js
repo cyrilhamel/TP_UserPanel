@@ -1,7 +1,10 @@
 //utilisateur type
 let admins = [{ id: 1, nom: "Revient", prenom: "Deloin", age: 25 }];
+
+//boutons d'origine
 let valButton = document.getElementById("valider");
 let suppAllButton = document.getElementById("suppAll");
+let triButton = document.getElementById("tri");
 
 valButton.addEventListener("click", addAdmin);
 suppAllButton.addEventListener("click", deleteAllAdmin);
@@ -10,8 +13,10 @@ affichAllAdmins();
 
 //bouton supprimer tous les admins
 function deleteAllAdmin(){
-  while(document.getElementById("liste").appendChild(id)>0){
-  element.remove();
+   suppAll=document.getElementById("liste");
+       while (suppAll.firstChild)
+        {
+                suppAll.removeChild(suppAll.firstChild);
   }
 }
 
